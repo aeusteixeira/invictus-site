@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invictus Restaurante - Sabor e tradição no coração da Maré</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;500&display=swap');
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        .playfair {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .hero-image {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('https://images.unsplash.com/photo-1559847844-5315695dadae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1798&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .menu-item {
+            transition: all 0.3s ease;
+        }
+        
+        .menu-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        
+        .gold-border {
+            border: 1px solid #D4AF37;
+        }
+        
+        .gold-bg {
+            background-color: #D4AF37;
+        }
+        
+        .gold-text {
+            color: #D4AF37;
+        }
+        
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 99;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 0 0 0 rgba(34, 197, 94, 0.7);
+            }
+            70% {
+                transform: scale(1.05);
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 0 0 10px rgba(34, 197, 94, 0);
+            }
+            100% {
+                transform: scale(1);
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 0 0 0 rgba(34, 197, 94, 0);
+            }
+        }
+    </style>
+</head>
+<body class="bg-black text-white">
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/5521987914603" class="whatsapp-btn bg-green-500 hover:bg-green-600 text-white rounded-full p-4 flex items-center justify-center">
+        <i class="fab fa-whatsapp text-2xl"></i>
+    </a>
+
+    <!-- Header -->
+    <header class="bg-black fixed w-full z-50 shadow-md">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <img src="img/marca/invictus-logo.png" alt="Invictus Restaurante" class="w-10 h-10 mr-3">
+                <span class="text-2xl playfair gold-text font-bold">Invictus Restaurante</span>
+            </div>
+            
+            <nav class="hidden md:block">
+                <ul class="flex space-x-8">
+                    <li><a href="#inicio" class="text-white hover:gold-text transition">Início</a></li>
+                    <li><a href="#sobre" class="text-white hover:gold-text transition">Sobre</a></li>
+                    <li><a href="#cardapio" class="text-white hover:gold-text transition">Cardápio</a></li>
+                    <li><a href="#petiscos" class="text-white hover:gold-text transition">Petiscos</a></li>
+                    <li><a href="#bebidas" class="text-white hover:gold-text transition">Bebidas</a></li>
+                    <li><a href="#localizacao" class="text-white hover:gold-text transition">Localização</a></li>
+                    <li><a href="#contato" class="text-white hover:gold-text transition">Contato</a></li>
+                </ul>
+            </nav>
+            
+            <button class="md:hidden text-white" id="menu-toggle">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden bg-black w-full py-4 px-4 md:hidden">
+            <ul class="space-y-4">
+                <li><a href="#inicio" class="text-white hover:gold-text block">Início</a></li>
+                <li><a href="#sobre" class="text-white hover:gold-text block">Sobre</a></li>
+                <li><a href="#cardapio" class="text-white hover:gold-text block">Cardápio</a></li>
+                <li><a href="#petiscos" class="text-white hover:gold-text block">Petiscos</a></li>
+                <li><a href="#bebidas" class="text-white hover:gold-text block">Bebidas</a></li>
+                <li><a href="#localizacao" class="text-white hover:gold-text block">Localização</a></li>
+                <li><a href="#contato" class="text-white hover:gold-text block">Contato</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero-image min-h-screen flex items-center pt-20">
+        <div class="container mx-auto px-4 text-center">
+            <img src="img/marca/invictus-logo-transparente.png" alt="Invictus Restaurante" class="w-64 h-64 mx-auto mb-6">
+            <h1 class="playfair text-5xl md:text-7xl font-bold gold-text mb-4">Invictus Restaurante</h1>
+            <p class="text-xl md:text-2xl mb-8">Sabor e tradição no coração da Maré</p>
+            <div class="flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-6">
+                <a href="#cardapio" class="gold-bg hover:bg-yellow-700 text-black font-bold py-3 px-6 rounded-full transition">Ver Cardápio</a>
+                <a href="https://wa.me/5521987914603" class="gold-border hover:bg-yellow-900 text-white font-bold py-3 px-6 rounded-full transition">Fazer Pedido via WhatsApp</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="sobre" class="py-20 bg-gray-900">
+        <div class="container mx-auto px-4">
+            <h2 class="playfair text-3xl md:text-4xl font-bold gold-text text-center mb-12">Quem Somos</h2>
+            
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-8 md:mb-0 md:pr-8">
+                    <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1674&q=80" alt="Restaurante Invictus" class="rounded-lg shadow-lg w-full">
+                </div>
+                
+                <div class="md:w-1/2">
+                    <p class="text-lg mb-8">
+                        O Invictus Restaurante é referência em comida caseira na Maré. Com um buffet variado e petiscos saborosos, oferecemos pratos preparados com tradição e ingredientes selecionados, em um ambiente acolhedor e familiar.
+                    </p>
+                    
+                    <div class="flex space-x-6">
+                        <a href="#" class="text-white hover:gold-text text-2xl"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-white hover:gold-text text-2xl"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-white hover:gold-text text-2xl"><i class="fab fa-google"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="cardapio" class="py-20 bg-black">
+        <div class="container mx-auto px-4">
+            <h2 class="playfair text-3xl md:text-4xl font-bold gold-text text-center mb-12">Buffet do Dia</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Menu Item 1 -->
+                <div class="bg-gray-900 rounded-lg overflow-hidden menu-item gold-border">
+                    <img src="img/Carne seca com abóbora.webp" alt="Carne seca com abóbora" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="playfair text-xl gold-text font-bold mb-2">Carne seca com abóbora</h3>
+                        <p class="text-lg font-bold">R$25,00</p>
+                    </div>
+                </div>
+                
+                <!-- Menu Item 2 -->
+                <div class="bg-gray-900 rounded-lg overflow-hidden menu-item gold-border">
+                    <img src="img/Bife de frango à parmegiana.webp" alt="Bife de frango à parmegiana" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="playfair text-xl gold-text font-bold mb-2">Bife de frango à parmegiana</h3>
+                        <p class="text-lg font-bold">R$25,00</p>
+                    </div>
+                </div>
+                
+                <!-- Menu Item 3 -->
+                <div class="bg-gray-900 rounded-lg overflow-hidden menu-item gold-border">
+                    <img src="img/Escondidinho de carne seca.webp" alt="Escondidinho de carne seca" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="playfair text-xl gold-text font-bold mb-2">Escondidinho de carne seca</h3>
+                        <p class="text-lg font-bold">R$25,00</p>
+                    </div>
+                </div>
+                
+                <!-- Menu Item 4 -->
+                <div class="bg-gray-900 rounded-lg overflow-hidden menu-item gold-border">
+                    <img src="img/Filé de Merluza.webp" alt="Filé de Merluza" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="playfair text-xl gold-text font-bold mb-2">Filé de Merluza</h3>
+                        <p class="text-lg font-bold">R$25,00</p>
+                    </div>
+                </div>
+                
+                <!-- Menu Item 5 -->
+                <div class="bg-gray-900 rounded-lg overflow-hidden menu-item gold-border">
+                    <img src="img/Frango com Quiabo.webp" alt="Frango com Quiabo" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="playfair text-xl gold-text font-bold mb-2">Frango com Quiabo</h3>
+                        <p class="text-lg font-bold">R$23,00</p>
+                    </div>
+                </div>
+                
+                <!-- Menu Item 6 -->
+                <div class="bg-gray-900 rounded-lg overflow-hidden menu-item gold-border">
+                    <img src="img/Carne Assada.webp" alt="Carne Assada" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="playfair text-xl gold-text font-bold mb-2">Carne Assada</h3>
+                        <p class="text-lg font-bold">R$23,00</p>
+                    </div>
+                </div>
+                
+                <!-- Menu Item 7 -->
+                <div class="bg-gray-900 rounded-lg overflow-hidden menu-item gold-border">
+                    <img src="img/Lasanha à Bolonhesa.webp" alt="Lasanha à Bolonhesa" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="playfair text-xl gold-text font-bold mb-2">Lasanha à Bolonhesa</h3>
+                        <p class="text-lg font-bold">R$25,00</p>
+                    </div>
+                </div>
+                
+                <!-- Menu Item 8 -->
+                <div class="bg-gray-900 rounded-lg overflow-hidden menu-item gold-border">
+                    <img src="img/Panqueca (Carne _ Frango _ Queijo).webp" alt="Panqueca" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="playfair text-xl gold-text font-bold mb-2">Panqueca (Carne / Frango / Queijo)</h3>
+                        <p class="text-lg font-bold">R$25,00</p>
+                    </div>
+                </div>
+                
+                <!-- Menu Item 9 -->
+                <div class="bg-gray-900 rounded-lg overflow-hidden menu-item gold-border">
+                    <img src="img/Feijoada.webp" alt="Feijoada" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="playfair text-xl gold-text font-bold mb-2">Feijoada</h3>
+                        <p class="text-lg font-bold">R$25,00</p>
+                    </div>
+                </div>
+                
+                <!-- Menu Item 10 -->
+                <div class="bg-gray-900 rounded-lg overflow-hidden menu-item gold-border">
+                    <img src="img/Dobradinha com Feijão Branco.webp" alt="Dobradinha com Feijão Branco" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="playfair text-xl gold-text font-bold mb-2">Dobradinha com Feijão Branco</h3>
+                        <p class="text-lg font-bold">R$25,00</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Drinks Section -->
+    <section id="bebidas" class="py-20 bg-gray-900">
+        <div class="container mx-auto px-4">
+            <h2 class="playfair text-3xl md:text-4xl font-bold gold-text text-center mb-12">Bebidas Geladas</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Drink Item 1 -->
+                <div class="bg-black rounded-lg overflow-hidden menu-item gold-border">
+                    <img src="img/Refrigerante.webp" alt="Refrigerantes" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="playfair text-xl gold-text font-bold mb-2">Refrigerante</h3>
+                        <p class="mb-2">Lata — R$5,00</p>
+                        <p class="mb-2">600ml — R$7,00</p>
+                        <p class="mb-2">1,5L — R$10,00</p>
+                        <p>2,0L — R$12,00</p>
+                    </div>
+                </div>
+                
+                <!-- Drink Item 2 -->
+                <div class="bg-black rounded-lg overflow-hidden menu-item gold-border">
+                    <img src="img/Sucos naturais.webp" alt="Sucos naturais" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="playfair text-xl gold-text font-bold mb-2">Sucos naturais</h3>
+                        <p class="mb-2">300ml — R$6,00</p>
+                        <p>500ml — R$8,00</p>
+                    </div>
+                </div>
+                
+                <!-- Drink Item 3 -->
+                <div class="bg-black rounded-lg overflow-hidden menu-item gold-border">
+                    <img src="img/Guaravita _ Guaraviton.webp" alt="Guaravita" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="playfair text-xl gold-text font-bold mb-2">Guaravita / Guaraviton</h3>
+                        <p>R$5,00</p>
+                    </div>
+                </div>
+                
+                <!-- Drink Item 4 -->
+                <div class="bg-black rounded-lg overflow-hidden menu-item gold-border">
+                    <img src="img/Cervejas.webp" alt="Cervejas" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="playfair text-xl gold-text font-bold mb-2">Cervejas</h3>
+                        <p class="mb-2">Antártica — R$8,00</p>
+                        <p class="mb-2">Brahma — R$8,00</p>
+                        <p class="mb-2">Corona — R$12,00</p>
+                        <p class="mb-2">Heineken — R$12,00</p>
+                        <p>Império — R$8,00</p>
+                    </div>
+                </div>
+                
+                <!-- Drink Item 5 -->
+                <div class="bg-black rounded-lg overflow-hidden menu-item gold-border">
+                    <img src="img/Água garrafa.webp" alt="Água" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="playfair text-xl gold-text font-bold mb-2">Água</h3>
+                        <p class="mb-2">Com gás — R$4,00</p>
+                        <p>Sem gás — R$3,00</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Snacks Section -->
+    <section id="petiscos" class="py-20 bg-black">
+        <div class="container mx-auto px-4">
+            <h2 class="playfair text-3xl md:text-4xl font-bold gold-text text-center mb-12">Petiscos e Porções</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Snack Item 1 -->
+                <div class="bg-gray-900 rounded-lg overflow-hidden menu-item gold-border">
+                    <img src="img/Batata frita simples.webp" alt="Batata frita" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="playfair text-xl gold-text font-bold mb-2">Batata frita simples</h3>
+                        <p class="mb-2">Média — R$15,00</p>
+                        <p>Grande — R$20,00</p>
+                    </div>
+                </div>
+                
+                <!-- Snack Item 2 -->
+                <div class="bg-gray-900 rounded-lg overflow-hidden menu-item gold-border">
+                    <img src="img/Batata frita simples (2).webp" alt="Batata maluca" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="playfair text-xl gold-text font-bold mb-2">Batata maluca</h3>
+                        <p class="mb-2">Média — R$20,00</p>
+                        <p>Grande — R$25,00</p>
+                    </div>
+                </div>
+                
+                <!-- Snack Item 3 -->
+                <div class="bg-gray-900 rounded-lg overflow-hidden menu-item gold-border">
+                    <img src="img/Calabresa.webp" alt="Calabresa" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="playfair text-xl gold-text font-bold mb-2">Calabresa</h3>
+                        <p>R$25,00</p>
+                    </div>
+                </div>
+                
+                <!-- Snack Item 4 -->
+                <div class="bg-gray-900 rounded-lg overflow-hidden menu-item gold-border">
+                    <img src="img/Anel de cebola.webp" alt="Anel de cebola" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="playfair text-xl gold-text font-bold mb-2">Anel de cebola</h3>
+                        <p>R$18,00</p>
+                    </div>
+                </div>
+                
+                <!-- Snack Item 5 -->
+                <div class="bg-gray-900 rounded-lg overflow-hidden menu-item gold-border">
+                    <img src="img/Gurjão de peixe.webp" alt="Gurjão de peixe" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="playfair text-xl gold-text font-bold mb-2">Gurjão de peixe</h3>
+                        <p>R$30,00</p>
+                    </div>
+                </div>
+                
+                <!-- Snack Item 6 -->
+                <div class="bg-gray-900 rounded-lg overflow-hidden menu-item gold-border">
+                    <img src="img/Frango a passarinho.webp" alt="Frango a passarinho" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="playfair text-xl gold-text font-bold mb-2">Frango a passarinho</h3>
+                        <p>R$28,00</p>
+                    </div>
+                </div>
+                
+                <!-- Snack Item 7 -->
+                <div class="bg-gray-900 rounded-lg overflow-hidden menu-item gold-border">
+                    <img src="img/Filezinho acebolado.webp" alt="Filezinho acebolado" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="playfair text-xl gold-text font-bold mb-2">Filezinho acebolado</h3>
+                        <p>R$32,00</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location Section -->
+    <section id="localizacao" class="py-20 bg-gray-900">
+        <div class="container mx-auto px-4">
+            <h2 class="playfair text-3xl md:text-4xl font-bold gold-text text-center mb-12">Como Chegar</h2>
+            
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-8 md:mb-0 md:pr-8">
+                    <h3 class="playfair text-2xl gold-text font-bold mb-4">Praça do Salsa e Merengue, S/N – Maré, RJ</h3>
+                    <p class="text-lg mb-6">
+                        Visite-nos e experimente a verdadeira comida com alma e tradição.
+                    </p>
+                    <a href="https://wa.me/5521987914603" class="gold-bg hover:bg-yellow-700 text-black font-bold py-3 px-6 rounded-full inline-block transition">Pedir Direções</a>
+                </div>
+                
+                <div class="md:w-1/2">
+                    <div class="aspect-w-16 aspect-h-9">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3675.301603700644!2d-43.17709768503429!3d-22.90224384346605!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x997f5e5a1e6f1d%3A0x1cdaa26a6a2f8d0d!2sPra%C3%A7a%20do%20Salsa%20e%20Merengue%20-%20Mar%C3%A9%2C%20Rio%20de%20Janeiro%20-%20RJ!5e0!3m2!1spt-BR!2sbr!4v1685556789019!5m2!1spt-BR!2sbr" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="rounded-lg shadow-lg"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contato" class="py-20 bg-black">
+        <div class="container mx-auto px-4">
+            <h2 class="playfair text-3xl md:text-4xl font-bold gold-text text-center mb-12">Fale Conosco</h2>
+            
+            <div class="max-w-2xl mx-auto text-center">
+                <p class="text-xl mb-8">
+                    Estamos à disposição para tirar suas dúvidas, receber sugestões ou reservar seu lugar.
+                </p>
+                
+                <div class="mb-8">
+                    <h3 class="playfair text-2xl gold-text font-bold mb-2">Telefone</h3>
+                    <p class="text-xl">(21) 98791-4603</p>
+                </div>
+                
+                <div class="flex justify-center space-x-6 mb-8">
+                    <a href="#" class="text-white hover:gold-text text-3xl"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-white hover:gold-text text-3xl"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="text-white hover:gold-text text-3xl"><i class="fab fa-google"></i></a>
+                </div>
+                
+                <a href="https://wa.me/5521987914603" class="gold-bg hover:bg-yellow-700 text-black font-bold py-3 px-6 rounded-full inline-block transition">Contato via WhatsApp</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black py-12 border-t border-gray-800">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-8">
+                <h3 class="playfair text-2xl gold-text font-bold mb-4">Invictus Restaurante</h3>
+                <p class="text-lg mb-4">O sabor da vitória todos os dias.</p>
+            </div>
+            
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <p>Praça do Salsa e Merengue, S/N – Maré, RJ</p>
+                    <p>(21) 98791-4603</p>
+                </div>
+                
+                <div class="flex space-x-6">
+                    <a href="#" class="text-white hover:gold-text text-xl"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-white hover:gold-text text-xl"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="text-white hover:gold-text text-xl"><i class="fab fa-google"></i></a>
+                </div>
+            </div>
+            
+            <div class="mt-8 pt-8 border-t border-gray-800 text-center text-gray-500">
+                <p>&copy; 2023 Invictus Restaurante. Todos os direitos reservados.</p>
+                <p class="mt-2 text-sm">Feito com ❤️ por <a href="https://matheusteixeira.com.br/" target="_blank" class="gold-text hover:text-yellow-400 transition">Matheus Teixeira</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+        
+        // Close mobile menu when clicking on a link
+        const mobileLinks = document.querySelectorAll('#mobile-menu a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                document.getElementById('mobile-menu').classList.add('hidden');
+            });
+        });
+        
+        // Smooth scrolling for all links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
