@@ -3,9 +3,141 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
     <title>Invictus Restaurante - Sabor e tradição no coração da Maré</title>
+    <meta name="description" content="Invictus Restaurante na Maré, Rio de Janeiro. Buffet variado, petiscos saborosos e comida caseira de qualidade. Feijoada, lasanha, frango, peixes e muito mais. Peça pelo WhatsApp!">
+    <meta name="keywords" content="restaurante maré, comida caseira rio de janeiro, buffet maré, feijoada, petiscos, delivery maré, invictus restaurante, comida brasileira">
+    <meta name="author" content="Matheus Teixeira">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="pt-BR">
+    <meta name="revisit-after" content="7 days">
+    
+    <!-- Geo Tags -->
+    <meta name="geo.region" content="BR-RJ">
+    <meta name="geo.placename" content="Maré, Rio de Janeiro">
+    <meta name="geo.position" content="-22.902244;-43.177097">
+    <meta name="ICBM" content="-22.902244, -43.177097">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:type" content="restaurant">
+    <meta property="og:title" content="Invictus Restaurante - Sabor e tradição no coração da Maré">
+    <meta property="og:description" content="Restaurante na Maré com buffet variado, petiscos saborosos e comida caseira de qualidade. Feijoada, lasanha, frango, peixes e muito mais!">
+    <meta property="og:image" content="https://invictusrestaurante.com.br/img/marca/invictus-logo-transparente.png">
+    <meta property="og:url" content="https://invictusrestaurante.com.br">
+    <meta property="og:site_name" content="Invictus Restaurante">
+    <meta property="og:locale" content="pt_BR">
+    
+    <!-- Restaurant specific Open Graph -->
+    <meta property="restaurant:contact_info:phone_number" content="+5521987914603">
+    <meta property="restaurant:contact_info:website" content="https://invictusrestaurante.com.br">
+    <meta property="restaurant:menu" content="https://invictusrestaurante.com.br#cardapio">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Invictus Restaurante - Sabor e tradição no coração da Maré">
+    <meta name="twitter:description" content="Restaurante na Maré com buffet variado, petiscos saborosos e comida caseira de qualidade.">
+    <meta name="twitter:image" content="https://invictusrestaurante.com.br/img/marca/invictus-logo-transparente.png">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="img/marca/favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/marca/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/marca/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/marca/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="img/marca/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="img/marca/android-chrome-512x512.png">
+    <link rel="manifest" href="img/marca/site.webmanifest">
+    
+    <!-- Additional Meta Tags -->
+    <meta name="theme-color" content="#D4AF37">
+    <meta name="msapplication-TileColor" content="#000000">
+    <meta name="msapplication-TileImage" content="img/marca/ms-icon-144x144.png">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://invictusrestaurante.com.br">
+    
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.tailwindcss.com">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Restaurant",
+        "name": "Invictus Restaurante",
+        "description": "Restaurante na Maré com buffet variado, petiscos saborosos e comida caseira de qualidade",
+        "image": "https://invictusrestaurante.com.br/img/marca/invictus-logo-transparente.png",
+        "url": "https://invictusrestaurante.com.br",
+        "telephone": "+5521987914603",
+        "priceRange": "$$",
+        "servesCuisine": "Brasileira",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Praça do Salsa e Merengue, S/N",
+            "addressLocality": "Maré",
+            "addressRegion": "RJ",
+            "addressCountry": "BR"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "-22.902244",
+            "longitude": "-43.177097"
+        },
+        "openingHoursSpecification": [
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+                "opens": "11:00",
+                "closes": "22:00"
+            },
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": "Saturday",
+                "opens": "11:00",
+                "closes": "23:00"
+            },
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": "Sunday",
+                "opens": "11:00",
+                "closes": "21:00"
+            }
+        ],
+        "hasMenu": {
+            "@type": "Menu",
+            "name": "Cardápio Invictus",
+            "hasMenuSection": [
+                {
+                    "@type": "MenuSection",
+                    "name": "Buffet do Dia",
+                    "hasMenuItem": [
+                        {"@type": "MenuItem", "name": "Feijoada", "offers": {"@type": "Offer", "price": "25.00", "priceCurrency": "BRL"}},
+                        {"@type": "MenuItem", "name": "Lasanha à Bolonhesa", "offers": {"@type": "Offer", "price": "25.00", "priceCurrency": "BRL"}},
+                        {"@type": "MenuItem", "name": "Frango com Quiabo", "offers": {"@type": "Offer", "price": "23.00", "priceCurrency": "BRL"}}
+                    ]
+                },
+                {
+                    "@type": "MenuSection",
+                    "name": "Petiscos",
+                    "hasMenuItem": [
+                        {"@type": "MenuItem", "name": "Batata frita simples", "offers": {"@type": "Offer", "price": "15.00", "priceCurrency": "BRL"}},
+                        {"@type": "MenuItem", "name": "Frango a passarinho", "offers": {"@type": "Offer", "price": "28.00", "priceCurrency": "BRL"}}
+                    ]
+                }
+            ]
+        },
+        "sameAs": [
+            "https://wa.me/5521987914603"
+        ]
+    }
+    </script>
+    
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;500&display=swap');
         

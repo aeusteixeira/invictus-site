@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+
+# Principais páginas do site
+Allow: /index.html
+Allow: /img/
+Allow: /img/marca/
+
+# Sitemap
+Sitemap: https://invictusrestaurante.com.br/sitemap.xml
+
+# Crawl delay
+Crawl-delay: 1 
